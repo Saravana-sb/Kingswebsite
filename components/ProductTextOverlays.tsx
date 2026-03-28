@@ -34,17 +34,17 @@ export default function ProductTextOverlays() {
             viewport={{ once: false, amount: 0.5 }}
             className="w-full px-6 lg:px-12"
           >
-            <div className="flex flex-row justify-between items-center w-full">
+            <div className="flex flex-col md:flex-row justify-between items-center w-full h-[85vh] md:h-auto py-12 md:py-0 gap-6 md:gap-0">
               
               <motion.div
                 variants={{
                   hidden: { opacity: 0, x: -50 },
                   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
                 }}
-                className="pointer-events-auto flex-1 flex justify-start z-20"
+                className="pointer-events-auto flex-1 flex items-start md:items-center justify-center md:justify-start z-20 w-full md:w-auto"
               >
-                <div className="inline-block backdrop-blur-md bg-black/50 rounded-xl p-5 md:p-6 shadow-2xl max-w-xs border border-white/5 text-center">
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white leading-tight">
+                <div className="inline-block backdrop-blur-md bg-black/60 rounded-xl p-4 md:p-6 shadow-2xl max-w-[85vw] md:max-w-xs border border-white/5 text-center">
+                  <h2 className="text-xl md:text-3xl font-bold tracking-tight text-white leading-tight">
                     {section.headline}
                   </h2>
                 </div>
@@ -55,15 +55,14 @@ export default function ProductTextOverlays() {
                   hidden: { opacity: 0, x: 50 },
                   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } }
                 }}
-                className="pointer-events-auto flex-1 flex justify-end z-20"
+                className="pointer-events-auto flex-1 flex items-end md:items-center justify-center md:justify-end z-20 w-full md:w-auto"
               >
-                <div className="inline-block backdrop-blur-md bg-black/50 rounded-xl p-5 md:p-6 shadow-2xl max-w-xs border border-white/5 text-center">
+                <div className="inline-block backdrop-blur-md bg-black/60 rounded-xl p-4 md:p-6 shadow-2xl max-w-[85vw] md:max-w-xs border border-white/5 text-center">
                   <p className="text-xs md:text-sm text-white/90 leading-relaxed font-medium whitespace-pre-line">
                     {section.paragraph}
                   </p>
                 </div>
               </motion.div>
-
             </div>
           </motion.div>
         </div>
