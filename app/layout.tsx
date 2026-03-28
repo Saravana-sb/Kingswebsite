@@ -1,15 +1,15 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Funnel_Sans } from "next/font/google";
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+const funnelSans = Funnel_Sans({subsets:['latin'],variable:'--font-sans'});
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata = {
+  title: "King’s Almirah | Iron Safe",
+  description: "From fruit to fuel.",
+};
 
 export default function RootLayout({
   children,
@@ -17,13 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${funnelSans.variable} font-sans antialiased text-white`} suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>
   )

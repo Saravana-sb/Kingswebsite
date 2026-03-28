@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    --product-gradient: linear-gradient(135deg, #1a0f07 0%, #ff6a00 100%);
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -118,11 +119,25 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  ::selection {
+    background-color: #06b6d4; /* cyan-500 */
+    color: white;
+  }
   body {
-    @apply bg-background text-foreground;
-    }
+    @apply text-foreground;
+    background: var(--background);
+  }
+  body {
+    background: var(--product-gradient);
+  }
   html {
     @apply font-sans;
-    }
+    scroll-behavior: smooth;
+  }
 }
